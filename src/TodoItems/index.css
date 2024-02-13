@@ -1,0 +1,28 @@
+.list-items-container{
+    display:flex;
+    justify-content:space-between;
+    margin:10px 0px;
+    
+}
+.task{
+    font-size:17px;
+}
+.buttons-container{
+    display:flex;
+    align-items:center;
+}
+.edit-button{
+    color:#fff;
+    background-color:green;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    margin-right:10px;
+}
+.delete-button{
+    color:#fff;
+    background-color:red;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+}
