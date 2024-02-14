@@ -1,14 +1,14 @@
-import './index.css'
+import './index.css';
 
 const TodoItems = ({ todoItems, deleteTodoItem, enabledEditTask }) => {
-    const { id, task } = todoItems
+    const { id, task } = todoItems;
     
     const deleteTodo = () => {
-        deleteTodoItem(id)
+        deleteTodoItem(id);
     }
 
     const enableEditTask = () => {
-        enabledEditTask(id)
+        enabledEditTask(id);
     }
     return (
         <li className="list-items-container">
@@ -23,4 +23,4 @@ const TodoItems = ({ todoItems, deleteTodoItem, enabledEditTask }) => {
     )
 }
 
-export default TodoItems
+export default TodoItems;
