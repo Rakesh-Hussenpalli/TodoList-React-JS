@@ -1,27 +1,27 @@
-import React, { useState } from 'react'
-import './index.css'
-import TodoItems from '../TodoItems'
+import React, { useState } from 'react';
+import './index.css';
+import TodoItems from '../TodoItems';
 
 const TodoList = () => {
     const [inputValue, setInputValue] = useState({
         id: "",
         msg: ""
-    })
-    const [todoList, setTodoList] = useState([])
+    });
+    const [todoList, setTodoList] = useState([]);
     const [editTask, setEditTask] = useState({
         id: "",
         isEdit: false
-    })
+    });
 
     const handleInput = (event) => {
         setInputValue({
             ...inputValue,
             msg: event.target.value
-        })
+        });
     }
 
     const submitHandler = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         if (inputValue.msg === "") {
             alert("Enter Your Task")
         }
@@ -29,7 +29,7 @@ const TodoList = () => {
             const newTodo = {
                 id: new Date().getTime().toString(),
                 task: inputValue.msg
-            }
+            };
             const updatedTodos = [...todoList, newTodo]
             setTodoList(updatedTodos)
             setInputValue({
@@ -43,8 +43,8 @@ const TodoList = () => {
     const deleteTodoItem = (id) => {
         const filteredTodoList = todoList.filter((eachTodo) => {
             return eachTodo.id !== id
-        })
-        setTodoList(filteredTodoList)
+        });
+        setTodoList(filteredTodoList);
     }
 
     const enabledEditTask = (id) => {
@@ -52,20 +52,20 @@ const TodoList = () => {
             ...editTask,
             id: id,
             isEdit: true
-        })
+        });
 
         const editableTask = todoList.find((eachTodo) => {
             return eachTodo.id === id
-        })
+        });
         setInputValue({
             ...inputValue,
             id: editableTask.id,
             msg: editableTask.task
-        })
+        });
     }
 
     const editHandler = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const editableTodoList = todoList.map((eachTodo) => {
             if (eachTodo.id === editTask.id) {
                 return {
@@ -76,7 +76,7 @@ const TodoList = () => {
             else {
                 return eachTodo
             }
-        })
+        });
         setTodoList(editableTodoList)
         setInputValue({
             id: "",
@@ -108,4 +108,4 @@ const TodoList = () => {
     )
 }
 
-export default TodoList
+export default TodoList;
